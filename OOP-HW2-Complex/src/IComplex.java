@@ -7,7 +7,8 @@ public interface IComplex {
 	/** @return the real part. */
 	public double getImage();
 
-	/** @return the angle in the polar representation. */
+	/** @return the angle in the polar representation. 
+	 * The angle will be between -pi and pi (-pi<angle<=pi)*/
 	public double getAngle();
 
 	/** @return the radius the polar representation. */
