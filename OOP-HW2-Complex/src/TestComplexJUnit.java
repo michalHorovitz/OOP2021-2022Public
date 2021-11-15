@@ -50,14 +50,12 @@ public class TestComplexJUnit {
 	@Test
 	public void testSets() {
 		c11 = new Complex1(0, 1);
-		c21 = new Complex1(c11);
+		c21 = new Complex2(c11);
 		testSet(c11);
 		testSet(c21);
 	}
 
 	private void testSet(IComplex c) {
-		c = new Complex1(0, 1);
-
 		c.setAngle(2 * Math.PI);
 		assertTrue(ComplexUtils.areEqual(c.getAngle(), 0));
 		assertEquals("Complex: 1.00 + 0.00i", c.toString());
