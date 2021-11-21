@@ -32,7 +32,7 @@ public interface IComplex {
 	 */
 	public void setRadius(double r);
 
-	/** @param r - return the conjugate number. */
+	/** @param r - return the conjugate number, and change this to be the conjugate number*/
 	public IComplex conjugate();
 
 	/**
