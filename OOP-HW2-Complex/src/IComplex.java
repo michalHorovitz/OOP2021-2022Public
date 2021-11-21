@@ -67,8 +67,8 @@ public interface IComplex {
 	public IComplex mulScalar(double d);
 
 	/**
-	 * @param c - divide the current object by the scalar complex number c.
-	 * 			If c=0, then nothing is done.
+	 * @param c - divide the current object by the complex number c.
+	 * 			If c==0, then nothing is done.
 	 *          The current element represents the result. Note that the return
 	 *          value is a copy of the current element, and not a reference to it.
 	 */
