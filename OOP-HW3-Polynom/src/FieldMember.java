@@ -54,9 +54,9 @@ public abstract class FieldMember<E> {
 	 */
 	public FieldMember<E> exponent(int n) {
 		if (n == 0)
-			return getIdentity();
+			return copy();
 		FieldMember<E> res = copy();
-		for (int i = 0; i < n; i++)
+		for (int i = 1; i < n; i++)
 			res = res.mult(getValue());
 		return res;
 	}

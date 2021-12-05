@@ -152,25 +152,24 @@ public class TestJunitPartA {
 	@Test
 	public void testCalculate() {
 		Complex comp = complexPolynom.calculate(new ComplexFieldMember(new Complex())).getValue();
-		assertEquals(comp, new Complex());
+		assertEquals(comp, new Complex(-1,2.129));
 		comp = complexPolynom.calculate(new ComplexFieldMember(new Complex(1, 1))).getValue();
-		assertEquals(comp, new Complex(3, 0));
+		assertEquals(comp, new Complex(-5, 4.129));
 		comp = complexPolynom.calculate(new ComplexFieldMember(new Complex(0, 1))).getValue();
-		assertEquals(comp, new Complex(2, 0));
+		assertEquals(comp, new Complex(-1, 0.129));
 		comp = complexPolynom.calculate(new ComplexFieldMember(new Complex(1, 0))).getValue();
-		assertEquals(comp, new Complex(3, -1));
+		assertEquals(comp, new Complex(0, 3.129));
 		comp = (new Polynom<Complex>()).calculate(new ComplexFieldMember(new Complex(1, 0))).getValue();
 		assertEquals(comp, new Complex());
-		
-		
+			
 		double d = doublePolynom.calculate(new DoubleFieldMember(0.0)).getValue();
-		assertEquals(d, 0.0, PRECISION);
+		assertEquals(d, 1.23, PRECISION);
 		d = doublePolynom.calculate(new DoubleFieldMember(1.0)).getValue();
-		assertEquals(d, 131.24, PRECISION);
+		assertEquals(d, 0.13, PRECISION);
 		d = doublePolynom.calculate(new DoubleFieldMember(-3.0)).getValue();
-		assertEquals(d, 127.24, PRECISION);
+		assertEquals(d, 110.13, PRECISION);
 		d = doublePolynom.calculate(new DoubleFieldMember(2.5)).getValue();
-		assertEquals(d, 132.74, PRECISION);
+		assertEquals(d, -36.5825, PRECISION);
 		d = (new Polynom<Double>()).calculate(new DoubleFieldMember(1.0)).getValue();
 		assertEquals(d, 0.0, PRECISION);
 
