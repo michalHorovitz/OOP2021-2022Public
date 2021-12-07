@@ -34,11 +34,11 @@ public class Polynom<E> implements IPolynom<E>{
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		int lastKey = -1;
-		if (!coefficients.isEmpty()) {
-			sb.append("Polynom: ");
-			lastKey = coefficients.lastKey();
+		if (coefficients.isEmpty()) {
+			return sb.toString();
 		}
+		sb.append("Polynom: ");
+		int lastKey = coefficients.lastKey();
 		for (Map.Entry<Integer, FieldMember<E>> monom : coefficients.entrySet()) {
 			sb.append(monom.getValue());
 			if (monom.getKey() != 0)

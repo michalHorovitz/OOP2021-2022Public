@@ -1,0 +1,6 @@
+line number=3, input line=aaa#[0,1.0][3,-2], Error message =  The type of the shape should be complex or double and not aaa.
+line number=4, input line=complex#, Error message = null
+line number=5, input line=double#[0,1.0][3,-2]#[-2,1.0], Error message = Too many "#" in the input line.
+line number=6, input line=double#[-2,1.0], Error message = The degree should be non-negative
+line number=7, input line=complex#[7,-(1+5i)], Error message = Complex number should start with (
+line number=8, input line=complex#7,(1+5i), Error message = Exception in scanning the polynomial string

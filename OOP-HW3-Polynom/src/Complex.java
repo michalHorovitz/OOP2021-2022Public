@@ -1,4 +1,4 @@
-public class Complex {
+public class Complex implements Comparable<Complex>{
 
 	double real;
 	double img;
@@ -102,6 +102,14 @@ public class Complex {
 			opString = "+";
 
 		return "(" + realString + opString + imgString + "i)";
+	}
+	
+	@Override
+	public int compareTo(Complex other) {
+		int res = Double.valueOf(real).compareTo(other.real);
+		if ( res == 0 )
+			res = Double.valueOf(img).compareTo(other.img);
+		return res;
 	}
 
 }
