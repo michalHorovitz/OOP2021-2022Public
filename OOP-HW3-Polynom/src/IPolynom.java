@@ -32,7 +32,7 @@ public interface IPolynom<E> {
 	 * @param deg
 	 * @param coefficient
 	 * add the monom: coefficient*x^(deg) to the polynom
-	 * if the deg has already appear in the polynom, 
+	 * if the deg has already appeared in the polynom, 
 	 * make add the parameter coefficient to the current coefficient of degree deg.
 	 */
 	public void addMonom(int deg, FieldMember<E> coefficient);

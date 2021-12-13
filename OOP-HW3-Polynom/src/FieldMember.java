@@ -1,5 +1,6 @@
+import java.util.Objects;
 
-public abstract class FieldMember<E> {
+public abstract class FieldMember<E> implements Comparable<FieldMember<E>> {
 
 	private E value;
 
@@ -9,6 +10,11 @@ public abstract class FieldMember<E> {
 
 	public E getValue() {
 		return value;
+	}
+
+	@Override
+	public String toString() {
+		return getValue().toString();
 	}
 
 	/**
@@ -54,16 +60,11 @@ public abstract class FieldMember<E> {
 	 */
 	public FieldMember<E> exponent(int n) {
 		if (n == 0)
-			return copy();
+			return getIdentity();
 		FieldMember<E> res = copy();
 		for (int i = 1; i < n; i++)
 			res = res.mult(getValue());
 		return res;
-	}
-	
-	@Override
-	public String toString() {
-		return getValue().toString();
 	}
 
 	/**
@@ -102,5 +103,33 @@ public abstract class FieldMember<E> {
 	 * the current object is not changed
 	 */
 	public abstract FieldMember<E> getIdentity();
+
+	/**
+	 * @return the additional identity
+	 * the current object is not changed
+	 */
+	public abstract FieldMember<E> getZero();
+
+	public boolean isZero() {
+		return this.equals(getZero());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(value);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FieldMember<E> other = (FieldMember<E>) obj;
+		return Objects.equals(value, other.value);
+	}
 
 }
